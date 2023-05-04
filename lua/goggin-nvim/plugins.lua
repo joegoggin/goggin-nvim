@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- Colorscheme
   {  
     "sainnhe/everforest",
     lazy = false,
@@ -19,7 +20,17 @@ local plugins = {
     config = function()
       vim.cmd([[colorscheme everforest]])
     end
-  }
+  },
+  
+  -- CMP plugins
+  "hrsh7th/nvim-cmp", -- The completion plugin
+  "hrsh7th/cmp-buffer", -- buffer completions
+  "hrsh7th/cmp-path", -- path completions
+  "hrsh7th/cmp-cmdline", -- cmdline completions
+  "saadparwaiz1/cmp_luasnip", -- snippet completions
+
+  -- Snippets
+  "L3MON4D3/LuaSnip", --snippet engine
 }
 
 local opts = {}

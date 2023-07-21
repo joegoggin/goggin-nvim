@@ -1,0 +1,6 @@
+require("plugins.completions")
+require("plugins.everforest")
+require("plugins.lualine")
+require("plugins.nvim-tree")
+require("plugins.treesitter")
+require("plugins.lsp_config")

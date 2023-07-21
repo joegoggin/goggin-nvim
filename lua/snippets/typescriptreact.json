@@ -1,0 +1,238 @@
+{
+  "Dripsy Style Prop": {
+    "prefix": "sxsty",
+    "body": ["sx={styles.$1}"]
+  },
+  "React Native Icon": {
+    "prefix": "nicon",
+    "body": [
+      "import { $1 } from '@expo/vector-icons'",
+      "import React from 'react'",
+      "",
+      "import { IconProps } from 'app/types/IconProps'",
+      "",
+      "/*",
+      "\tprops: (size: string, color: string)",
+      "\tdescription: Reusable component that renders a $2 icon from '@expo/vector-icons' on Native.",
+      "*/",
+      "const $3Icon: React.FC<IconProps> = ({ size, color }) => {",
+      "\treturn <$1 name='$4' size={size} color={color} />",
+      "}",
+      "",
+      "export default $3Icon"
+    ]
+  },
+  "Next Page Template": {
+    "prefix": "nepa",
+    "body": ["import $1 from 'app/screens/$2'", "", "export default $1"]
+  },
+  "Next Private Page Template": {
+    "prefix": "nepr",
+    "body": [
+      "import React from 'react'",
+      "",
+      "import { RoleEnum } from 'server/models/enums/Role'",
+      "import $1Screen from 'app/screens/$2'",
+      "import PrivatePage from 'next-app/components/PrivatePage'",
+      "",
+      "const $1Page: React.FC = () => {",
+      "\treturn (",
+      "\t\t<PrivatePage role={RoleEnum.enum.$3}>",
+      "\t\t\t<$1Screen />",
+      "\t\t</PrivatePage>",
+      "\t)",
+      "}",
+      "",
+      "export default $1Page"
+    ]
+  },
+  "React Context Typescript Template": {
+    "prefix": "rectx",
+    "body": [
+      "import { type ReactNode, createContext, useContext, useState } from 'react'",
+      "",
+      "type $1Context = {",
+      "\t$0",
+      "}",
+      "",
+      "const $1Ctx = createContext<$1Context>({",
+      "\t",
+      "})",
+      "",
+      "export const use$1 = () => useContext($1Ctx)",
+      "",
+      "const $1ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {",
+      "\t",
+      "",
+      "\treturn <$1Ctx.Provider value={{}}>{children}</$1Ctx.Provider>",
+      "}",
+      "",
+      "export default $1ContextProvider"
+    ]
+  },
+  "React Native Screen": {
+    "prefix": "rescr",
+    "body": [
+      "import React, { useEffect } from 'react'",
+      "",
+      "import { useNavBar } from 'app/provider/context/NavBarContextProvider'",
+      "",
+      "const $1Screen: React.FC = () => {",
+      "\t// context",
+      "\tconst { setActiveLink } = useNavBar()",
+      "",
+      "\t// effects",
+      "\tuseEffect(() => {",
+      "\t\tsetActiveLink('$2')",
+      "\t}, []) // eslint-disable-line",
+      "",
+      "\treturn $0",
+      "}",
+      "",
+      "export default $1Screen"
+    ]
+  },
+  "React Stack Navigation Template": {
+    "prefix": "restna",
+    "body": [
+      "import { createNativeStackNavigator } from '@react-navigation/native-stack'",
+      "",
+      "import { getDefaultStackScreenOptions } from 'app/constants/defaultStackScreenOptions'",
+      "import { useColors } from 'app/provider/context/ColorsContextProvider'",
+      "",
+      "const Stack = createNativeStackNavigator<{",
+      "\t$2: $3",
+      "}>()",
+      "",
+      "const $1Navigator = () => {",
+      "\t// context",
+      "\tconst { colors } = useColors()",
+      "",
+      "\treturn (",
+      "\t\t<Stack.Navigator screenOptions={{ ...getDefaultStackScreenOptions(colors) }}>",
+      "\t\t\t<Stack.Screen",
+      "\t\t\t\tname='$2'",
+      "\t\t\t\tcomponent={$4}",
+      "\t\t\t\toptions={{",
+      "\t\t\t\t\ttitle:'$0'",
+      "\t\t\t\t}}",
+      "\t\t\t/>",
+      "\t\t</Stack.Navigator>",
+      "\t)",
+      "}",
+      "",
+      "export default $1Navigator"
+    ]
+  },
+  "React Navigation Comment": {
+    "prefix": "navcom",
+    "body": [
+      "/*",
+      "\tscreens: {$1}",
+      "\tpermissions: [$2]",
+      "\tdescription: $3",
+      "*/"
+    ]
+  },
+  "React TypeScript Component": {
+    "prefix": "recomp",
+    "body": [
+      "import React from 'react'",
+      "",
+      "type $1Props = {}",
+      "",
+      "const $1: React.FC<$1Props> = () => {",
+      "\treturn $0",
+      "}",
+      "",
+      "export default $1"
+    ]
+  },
+  "React Native Screen Comment": {
+    "prefix": "scrcom",
+    "body": [
+      "/*",
+      "\troute: $1",
+      "\tparams: {$2}",
+      "\tpermissions: [$3]",
+      "\tdescription: $4",
+      "*/"
+    ]
+  },
+  "Solito Use Param Template": {
+    "prefix": "uspa",
+    "body": [
+      "import { createParam } from 'solito'",
+      "",
+      "const { useParam } = createParam<{ $1: string }>()",
+      "",
+      "export const use$2 = () => {",
+      "\tconst [$1] = useParam('$1')",
+      "",
+      "\treturn $1",
+      "}"
+    ]
+  },
+  "Format for Style Prop": {
+    "prefix": "sty",
+    "body": ["style={styles.$1}"]
+  },
+  "todo": {
+    "prefix": "todo",
+    "body": ["/*", "** TODO **", "** $0", "*/", ""]
+  },
+  "useEffect Comment Template": {
+    "prefix": "efcom",
+    "body": ["/*", "\tdependencies: [$1]", "\tdescription: $2", "*/"]
+  },
+  "Web Icon": {
+    "prefix": "wicon",
+    "body": [
+      "import { $1 } from 'react-icons/$2'",
+      "import React from 'react'",
+      "",
+      "import { IconProps } from 'app/types/IconProps'",
+      "",
+      "/*",
+      "\tprops: (size: string, color: string)",
+      "\tdescription: Reusable component that renders a $3 icon from 'react-icons' on Web.",
+      "*/",
+      "const $4Icon: React.FC<IconProps> = ({ size, color }) => {",
+      "\treturn <$1 size={size} color={color} />",
+      "}",
+      "",
+      "export default $4Icon"
+    ]
+  },
+  "Use Effect": {
+    "prefix": "uef",
+    "body": ["useEffect(() => {", "\t$0", "}, [$1])"]
+  },
+  "Styles Object": {
+    "prefix": "styo",
+    "body": [
+      "// styles",
+      "const sx = useSx()",
+      "",
+      "const styles = {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Use State": {
+    "prefix": "ust",
+    "body": ["const [$1, set$2] = useState<$3>($4)$0"]
+  },
+  "tRPC useQuery": {
+    "prefix": "tuq",
+    "body": ["const { data: fetched$1 } = api.$2.get$1.useQuery($0)"]
+  },
+  "tRPC useMutation": {
+    "prefix": "tum",
+    "body": [
+      "const $1 = api.$2.$1.useMutation({",
+      "\tonError: onError(setError)",
+      "})"
+    ]
+  }
+}

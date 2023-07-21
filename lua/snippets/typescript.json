@@ -1,0 +1,162 @@
+{
+  "tRPC router": {
+    "prefix": "trout",
+    "body": [
+      "import { createTRPCRouter } from '../trpc'",
+      "",
+      "const include = {",
+      "\t$1",
+      "}",
+      "",
+      "export const $2Router = createTRPCRouter({",
+      "\t$0",
+      "})"
+    ]
+  },
+  "tRPC create": {
+    "prefix": "tcre",
+    "body": [
+      "create$1: $2",
+      "\t.input(",
+      "\t\tz.object({",
+      "\t\t\tdata: $1Schema",
+      "\t\t})",
+      "\t)",
+      "\t.mutation(async ({ ctx, input }) => {",
+      "\t\tconst { data } = input",
+      "",
+      "\t\ttry {",
+      "\t\t\tconst $3 = await ctx.prisma.$3.create({",
+      "\t\t\t\tdata,",
+      "\t\t\t})",
+      "",
+      "\t\t\tif ($3) {",
+      "\t\t\t\treturn { $3: $3 as $1 }",
+      "\t\t\t}",
+      "",
+      "\t\t\treturn { $3: null }",
+      "\t\t} catch (error) {",
+      "\t\t\tthrow error",
+      "\t\t}",
+      "\t}),"
+    ]
+  },
+  "tRPC update": {
+    "prefix": "tup",
+    "body": [
+      "update$1: $2",
+      "\t.input(z.object({",
+      "\t\t$3Id: z.string(),",
+      "\t\tdata: $1Schema.partial()",
+      "\t}))",
+      "\t.mutation(async ({ ctx, input }) => {",
+      "\t\tconst { $3Id, data } = input",
+      "\t\ttry {",
+      "\t\t\tconst updated$1 = await ctx.prisma.$3.update({",
+      "\t\t\t\twhere: {",
+      "\t\t\t\t\tid: $3Id",
+      "\t\t\t\t},",
+      "\t\t\t\tdata",
+      "\t\t\t\tinclude",
+      "\t\t\t})",
+      "",
+      "\t\t\tconst updated$1s = await ctx.prisma.$3.findMany({",
+      "\t\t\t\tinclude",
+      "\t\t\t})",
+      "",
+      "\t\t\tif (updated$1 && updated$1s) {",
+      "\t\t\t\treturn { updated$1: updated$1 as $1, updated$1s: updated$1s as $1[]}",
+      "\t\t\t}",
+      "",
+      "\t\t\treturn { updated$1: null, updated$1s: null }",
+      "\t\t} catch (error) {",
+      "\t\t\thandlePrismaNotFoundError(error, '$1')",
+      "",
+      "\t\t\tthrow error",
+      "\t\t}",
+      "\t}),"
+    ]
+  },
+  "tRPC get unique": {
+    "prefix": "tgetu",
+    "body": [
+      "get$1: $2",
+      "\t.input(z.object({",
+      "\t\t$3Id: z.string()",
+      "\t}))",
+      "\t.query(async ({ ctx, input }) => {",
+      "\t\tconst { $3Id } = input",
+      "",
+      "\t\ttry {",
+      "\t\t\tconst $3 = await ctx.prisma.$3.findUnique({",
+      "\t\t\t\twhere: {",
+      "\t\t\t\t\tid: $3Id",
+      "\t\t\t\t},",
+      "\t\t\t\tinclude",
+      "\t\t\t})",
+      "",
+      "\t\t\treturn $3 as $1",
+      "\t\t} catch (error) {",
+      "\t\t\thandlePrismaNotFoundError(error, '$1')",
+      "\t\t}",
+      "\t}),"
+    ]
+  },
+  "tRPC get many": {
+    "prefix": "tgetm",
+    "body": [
+      "get$1: $2",
+      "\t.query(async ({ ctx }) => {",
+      "\t\ttry {",
+      "\t\t\tconst $3s = await ctx.prisma.$3.findMany({",
+      "\t\t\t\tinclude",
+      "\t\t\t})",
+      "",
+      "\t\t\treturn $3s",
+      "\t\t} catch (error) {",
+      "\t\t\tthrow error",
+      "\t\t}",
+      "\t}),"
+    ]
+  },
+  "tRPC delete": {
+    "prefix": "tdel",
+    "body": [
+      "delete$1: $2",
+      "\t.input(z.object({",
+      "\t\t$3Id: z.string()",
+      "\t}))",
+      "\t.mutation(async ({ ctx, input }) => {",
+      "\t\tconst { $3Id } = input",
+      "",
+      "\t\ttry {",
+      "\t\t\tconst isDelete = await ctx.prisma.$3.delete({",
+      "\t\t\t\twhere: {",
+      "\t\t\t\t\tid: $3Id",
+      "\t\t\t\t}",
+      "\t\t\t})",
+      "",
+      "\t\t\tif (isDelete) {",
+      "\t\t\t\treturn true",
+      "\t\t\t}",
+      "\t\t} catch (error) {",
+      "\t\t\thandlePrismaNotFoundError(error, '$1')",
+      "",
+      "\t\t\tthrow error",
+      "\t\t}",
+      "\t}),"
+    ]
+  },
+  "zod schema": {
+    "prefix": "zsch",
+    "body": [
+      "export const $1Schema = z.object({",
+      "\t$0",
+      "})",
+      "",
+      "export type $1 = z.infer<typeof $1Schema> & {",
+      "\tid: string",
+      "}"
+    ]
+  }
+}

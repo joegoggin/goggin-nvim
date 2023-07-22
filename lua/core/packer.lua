@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
     use "nvim-tree/nvim-tree.lua"
     use "nvim-tree/nvim-web-devicons"
 
+    -- Buffer Line --
+    use "akinsho/bufferline.nvim"
+
     -- Lua Line --
     use "nvim-lualine/lualine.nvim"
 

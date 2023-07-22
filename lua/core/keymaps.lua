@@ -1,9 +1,9 @@
 local keymap = vim.keymap.set
-local builtin = require("telescope.builtin")
-local builtin = require("telescope.builtin")
-local keymap = vim.keymap.set
+local builtin_status_ok, builtin = pcall(require, "telescope.builtin")
 
-
+if not builtin_status_ok then
+    return
+end
 
 -- Save File --
 
@@ -80,6 +80,9 @@ keymap("n", "gi", vim.lsp.buf.implementation, {
 })
 keymap("n", "gr", builtin.lsp_references, {
     desc = "List References"
+})
+keymap("n", "gl", vim.diagnostic.open_float, {
+    desc = "Show Diagnostics Info"
 })
 keymap("n", "K", vim.lsp.buf.hover, {
     desc = "Hover"

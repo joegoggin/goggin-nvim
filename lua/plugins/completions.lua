@@ -13,7 +13,7 @@ local check_backspace = function()
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
-require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/lua/snippets" } }
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/utils/snippets" } }
 
 local kind_icons = {
     Text = "󰉿",

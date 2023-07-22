@@ -9,39 +9,39 @@ if not luasnip_status_ok then
 end
 
 local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+    local col = vim.fn.col(".") - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/utils/snippets" } }
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/utils/snippets" } })
 
 local kind_icons = {
     Text = "󰉿",
-	Method = "󰆧",
-	Function = "󰊕",
-	Constructor = "",
+    Method = "󰆧",
+    Function = "󰊕",
+    Constructor = "",
     Field = " ",
-	Variable = "󰀫",
-	Class = "󰠱",
-	Interface = "",
-	Module = "",
-	Property = "󰜢",
-	Unit = "󰑭",
-	Value = "󰎠",
-	Enum = "",
-	Keyword = "󰌋",
+    Variable = "󰀫",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
     Snippet = "",
-	Color = "󰏘",
-	File = "󰈙",
+    Color = "󰏘",
+    File = "󰈙",
     Reference = "",
-	Folder = "󰉋",
-	EnumMember = "",
-	Constant = "󰏿",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
     Struct = "",
-	Event = "",
-	Operator = "󰆕",
+    Event = "",
+    Operator = "󰆕",
     TypeParameter = " ",
-	Misc = " ",
+    Misc = " ",
 }
 
 cmp.setup({
@@ -51,6 +51,7 @@ cmp.setup({
         ["<C-o>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -82,7 +83,7 @@ cmp.setup({
     }),
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            require("luasnip").lsp_expand(args.body)
         end,
     },
     formatting = {
@@ -111,6 +112,6 @@ cmp.setup({
     window = {
         documentation = {
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        }
-    }
+        },
+    },
 })

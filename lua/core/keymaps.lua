@@ -51,10 +51,13 @@ keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", {
 keymap("n", "<leader>ff", builtin.find_files, {
     desc = "Find All Files",
 })
+keymap("n", "<leader>fg", builtin.git_files, {
+    desc = "File Git Files",
+})
 keymap("n", "<leader>fo", builtin.oldfiles, {
     desc = "Find Old Files",
 })
-keymap("n", "<leader>fg", builtin.live_grep, {
+keymap("n", "<leader>fl", builtin.live_grep, {
     desc = "Search With Live Grep",
 })
 keymap("n", "<leader>fh", builtin.help_tags, {

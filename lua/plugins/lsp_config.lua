@@ -33,7 +33,7 @@ local formatting = null_ls.builtins.formatting
 mason.setup()
 
 mason_lsp.setup({
-    ensure_installed = { "lua_ls", "tsserver", "tailwindcss" },
+    ensure_installed = { "lua_ls", "tsserver", "tailwindcss", "emmet_ls" },
 })
 
 null_ls.setup({
@@ -106,4 +106,12 @@ lsp.solargraph.setup({
 
 lsp.tsserver.setup({
     capabilites = capabilities,
+})
+
+lsp.tailwindcss.setup({
+    capabilites = capabilities,
+})
+
+lsp.emmet_ls.setup({
+    capabilities = capabilities,
 })

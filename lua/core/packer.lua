@@ -54,8 +54,11 @@ return require("packer").startup(function(use)
     use("jose-elias-alvarez/null-ls.nvim")
     use("jay-babu/mason-null-ls.nvim")
 
-    -- Git --
+    -- History --
     use("mbbill/undotree")
+
+    -- Git --
+    use("tpope/vim-fugitive")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

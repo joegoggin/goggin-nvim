@@ -224,4 +224,13 @@ keymap("n", "<leader>c", "<cmd>bd<cr><cmd>bprevious<cr>", {
 -- Undotree --
 
 -- -- Normal Mode -- --
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", {
+    desc = "Toggle Undotree",
+})
+
+-- Git --
+
+-- Normal Mode -- --
+keymap("n", "<leader>gg", "<cmd>Git<cr>", {
+    desc = "Open Fugitive",
+})

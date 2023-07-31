@@ -1,6 +1,6 @@
 -- opt --
 vim.opt.backup = false                          -- creates a backup file
-vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+-- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
@@ -24,7 +24,7 @@ vim.opt.writebackup = false                     -- if a file is being edited by 
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4                             -- the number of spaces for a tab
-vim.opt.cursorline = true                       -- highlight the current line
+vim.opt.cursorline = false                      -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbered lines
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
@@ -33,14 +33,12 @@ vim.opt.wrap = false                            -- display lines as one long lin
 vim.opt.scrolloff = 8                           -- sets num of screen line above and below cursor
 vim.opt.sidescrolloff = 8                       -- sets num of screen columns to left and right of cursor
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
-vim.opt.shortmess:append "c"                    -- controls behavior of certain messages that are displayed (reduce visual clutter)
+vim.opt.shortmess:append("c")                   -- controls behavior of certain messages that are displayed (reduce visual clutter)
 
 -- cmd --
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+vim.cmd([[set iskeyword+=-]])
 
 -- g --
-vim.g.mapleader = " "                           -- set leader key 
-vim.g.maplocalleader = " "                      -- set local leader key
-
-
+vim.g.mapleader = " "      -- set leader key
+vim.g.maplocalleader = " " -- set local leader key

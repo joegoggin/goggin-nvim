@@ -220,3 +220,8 @@ keymap("n", "<s-l>", "<cmd>bnext<cr>", {
 keymap("n", "<leader>c", "<cmd>bd<cr><cmd>bprevious<cr>", {
     desc = "Close Buffer",
 })
+
+-- Undotree --
+
+-- -- Normal Mode -- --
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>")

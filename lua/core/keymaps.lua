@@ -48,16 +48,16 @@ keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", {
 -- Telescope --
 
 -- -- Normal Mode -- --
-keymap("n", "<leader>fa", builtin.find_files, {
+keymap("n", "<leader>ff", builtin.find_files, {
     desc = "Find All Files",
 })
-keymap("n", "<leader>ff", builtin.git_files, {
+keymap("n", "<leader>fg", builtin.git_files, {
     desc = "File Git Files",
 })
 keymap("n", "<leader>fo", builtin.oldfiles, {
     desc = "Find Old Files",
 })
-keymap("n", "<leader>fg", builtin.live_grep, {
+keymap("n", "<leader>fl", builtin.live_grep, {
     desc = "Search With Live Grep",
 })
 keymap("n", "<leader>fh", builtin.help_tags, {
@@ -73,6 +73,7 @@ keymap("n", "<leader>rn", vim.lsp.buf.rename, {
 keymap("n", "<leader>ca", vim.lsp.buf.code_action, {
     desc = "Run Code Action",
 })
+
 keymap("n", "gd", vim.lsp.buf.definition, {
     desc = "Go to Definition",
 })
@@ -196,7 +197,7 @@ keymap("v", "<c-x>", "ygvd", {
 })
 
 -- -- Insert Mode -- --
-keymap("i", "<c-v>", "<c-r>+", {
+keymap("v", "<c-v>", "<c-r>+", {
     desc = "Paste",
 })
 
@@ -205,14 +206,6 @@ keymap("i", "<c-v>", "<c-r>+", {
 -- -- Normal Mode -- --
 keymap("n", "<c-a>", "ggVG", {
     desc = "Select All",
-})
-
--- -- Visual Mode -- --
-keymap("v", "<c-j>", "<cmd>m '>+1<cr>gv=gv", {
-    desc = "Move Selection Down One Line",
-})
-keymap("v", "<c-k>", "<cmd>m '<-2<cr>gv=gv", {
-    desc = "Move Selection Up One Line",
 })
 
 -- Buffer --
@@ -227,15 +220,3 @@ keymap("n", "<s-l>", "<cmd>bnext<cr>", {
 keymap("n", "<leader>c", "<cmd>bd<cr><cmd>bprevious<cr>", {
     desc = "Close Buffer",
 })
-
--- Undo Tree --
-
--- -- Normal Mode -- --
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", {
-    desc = "Toggle Undo Tree",
-})
-
--- Git --
-
--- -- Normal Mode -- --
-keymap("n", "<leader>gg", vim.cmd.Git)

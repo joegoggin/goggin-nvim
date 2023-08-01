@@ -1,6 +1,6 @@
 -- opt --
 vim.opt.backup = false                          -- creates a backup file
--- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
@@ -42,3 +42,18 @@ vim.cmd([[set iskeyword+=-]])
 -- g --
 vim.g.mapleader = " "      -- set leader key
 vim.g.maplocalleader = " " -- set local leader key
+
+-- WSL clipboard --
+if vim.fn.has("wsl") == 1 then
+    vim.g.clipboard = {
+        name = "WslClipboard",
+        copy = {
+            ["+"] = "clip.exe",
+            ["*"] = "clip.exe",
+        },
+        paste = {
+            ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+            ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+        },
+    }
+end

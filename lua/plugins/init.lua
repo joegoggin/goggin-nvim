@@ -1,3 +1,4 @@
+require("plugins.autopairs")
 require("plugins.bufferline")
 require("plugins.completions")
 require("plugins.everforest")

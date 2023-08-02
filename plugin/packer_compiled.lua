@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/joe/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
+  ["live-server.nvim"] = {
+    loaded = true,
+    path = "/home/joe/.local/share/nvim/site/pack/packer/start/live-server.nvim",
+    url = "https://github.com/barrett-ruth/live-server.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/joe/.local/share/nvim/site/pack/packer/start/lualine.nvim",

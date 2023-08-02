@@ -201,7 +201,7 @@ keymap("v", "<c-x>", "ygvd", {
 })
 
 -- -- Insert Mode -- --
-keymap("i", "<c-v>", "p", {
+keymap("i", "<c-v>", "<c-r>+", {
     desc = "Paste",
 })
 

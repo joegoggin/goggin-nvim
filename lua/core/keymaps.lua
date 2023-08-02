@@ -5,6 +5,12 @@ if not builtin_status_ok then
     return
 end
 
+local nt_api_status_ok, nt_api = pcall(require, "nvim-tree.api")
+
+if not nt_api_status_ok then
+    return
+end
+
 -- Save File --
 
 -- -- Normal Mode -- --
@@ -45,7 +51,10 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", {
 -- Nvim Tree --
 
 -- -- Normal Mode -- --
-keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", {
+keymap("n", "<leader>e", function()
+    nt_api.git.reload()
+    vim.cmd("NvimTreeFindFileToggle")
+end, {
     desc = "Toggle Explorer",
 })
 

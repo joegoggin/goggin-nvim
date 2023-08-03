@@ -33,7 +33,7 @@ local formatting = null_ls.builtins.formatting
 mason.setup()
 
 mason_lsp.setup({
-    ensure_installed = { "lua_ls", "tsserver", "emmet_ls" },
+    ensure_installed = { "lua_ls", "tsserver", "emmet_ls", "tailwindcss" },
 })
 
 null_ls.setup({
@@ -110,4 +110,8 @@ lsp.tsserver.setup({
 
 lsp.emmet_ls.setup({
     capabilites = capabilities,
+})
+
+lsp.tailwindcss.setup({
+    capabilities = capabilities,
 })

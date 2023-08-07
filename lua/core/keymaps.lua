@@ -115,6 +115,18 @@ keymap("n", "<leader>wh", "<cmd>split<cr>", {
 keymap("n", "<leader>wc", "<c-w>c", {
     desc = "Close Window",
 })
+keymap("n", "-", "<cmd>vertical resize -5<cr>", {
+    desc = "Decrease Window Width",
+})
+keymap("n", "=", "<cmd>vertical resize +5<cr>", {
+    desc = "Increase Window Width",
+})
+keymap("n", "_", "<cmd>resize -5<cr>", {
+    desc = "Decrease Window Height",
+})
+keymap("n", "+", "<cmd>resize +5<cr>", {
+    desc = "Increase Window Height",
+})
 
 -- Focus --
 

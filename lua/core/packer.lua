@@ -66,6 +66,9 @@ return require("packer").startup(function(use)
     -- Live Server --
     use("barrett-ruth/live-server.nvim")
 
+    -- Indent blankline --
+    use("lukas-reineke/indent-blankline.nvim")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

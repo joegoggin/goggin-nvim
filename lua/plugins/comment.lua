@@ -1,5 +1,10 @@
-local status_ok, comment = pcall(require, "Comment")
-if not status_ok then
+local comment_status_ok, comment = pcall(require, "Comment")
+if not comment_status_ok then
+    return
+end
+
+local ts_context_status_ok, ts_context = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
+if not ts_context_status_ok then
     return
 end
 
@@ -42,7 +47,7 @@ comment.setup({
         extra = true,
     },
     ---Function to call before (un)comment
-    pre_hook = nil,
+    pre_hook = ts_context.create_pre_hook(),
     ---Function to call after (un)comment
     post_hook = nil,
 })

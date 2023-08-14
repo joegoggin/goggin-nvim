@@ -40,7 +40,7 @@ return require("packer").startup(function(use)
     -- Telescope --
     use({
         "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/plenary.nvim" } },
+        requires = { { "nvim-lua/plenary.nvim", "JoosepAlviste/nvim-ts-context-commentstring" } },
     })
 
     -- Mason --
@@ -68,6 +68,9 @@ return require("packer").startup(function(use)
 
     -- Indent blankline --
     use("lukas-reineke/indent-blankline.nvim")
+
+    -- Comments --
+    use("numToStr/Comment.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -80,10 +80,10 @@ keymap("n", "<leader>fh", builtin.help_tags, {
 -- Lsp --
 
 -- -- Normal Mode -- --
-keymap("n", "<leader>rn", vim.lsp.buf.rename, {
+keymap("n", "<leader>lr", vim.lsp.buf.rename, {
     desc = "Rename",
 })
-keymap("n", "<leader>ca", vim.lsp.buf.code_action, {
+keymap("n", "<leader>la", vim.lsp.buf.code_action, {
     desc = "Run Code Action",
 })
 
@@ -242,8 +242,11 @@ keymap("n", "<s-h>", "<cmd>bprevious<cr>", {
 keymap("n", "<s-l>", "<cmd>bnext<cr>", {
     desc = "Next Buffer",
 })
-keymap("n", "<leader>c", "<cmd>bd<cr><cmd>bprevious<cr>", {
+keymap("n", "<leader>c", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>", {
     desc = "Close Buffer",
+})
+keymap("n", "<leader>C", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr><cmd>q<cr>", {
+    desc = "Close Buffer and Quit",
 })
 
 -- Undotree --

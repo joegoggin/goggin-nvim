@@ -266,6 +266,9 @@ keymap("n", "<leader>gg", "<cmd>Git<cr>", {
 -- Toggle Term --
 
 -- -- Normal Mode -- --
+keymap("n", "<leader>t", "<cmd>ToggleTerm<cr>", {
+    desc = "Toggle Terminal",
+})
 keymap("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", {
     desc = "Toggle Terminal in New Tab",
 })

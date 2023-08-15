@@ -110,6 +110,7 @@ lsp.tsserver.setup({
 
 lsp.emmet_ls.setup({
     capabilites = capabilities,
+    filetypes = { "html" },
 })
 
 lsp.tailwindcss.setup({

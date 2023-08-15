@@ -272,7 +272,7 @@ keymap("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", {
 keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", {
     desc = "Toggle Floating Terminal",
 })
-keymap("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", {
+keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", {
     desc = "Toggle Verticle Terminal",
 })
 keymap("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", {

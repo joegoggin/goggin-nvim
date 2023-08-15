@@ -262,3 +262,19 @@ keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", {
 keymap("n", "<leader>gg", "<cmd>Git<cr>", {
     desc = "Open Fugitive",
 })
+
+-- Toggle Term --
+
+-- -- Normal Mode -- --
+keymap("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", {
+    desc = "Toggle Terminal in New Tab",
+})
+keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", {
+    desc = "Toggle Floating Terminal",
+})
+keymap("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", {
+    desc = "Toggle Verticle Terminal",
+})
+keymap("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", {
+    desc = "Toggle Horizontal Terminal",
+})

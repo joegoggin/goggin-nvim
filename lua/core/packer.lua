@@ -60,8 +60,9 @@ return require("packer").startup(function(use)
     -- Git --
     use("tpope/vim-fugitive")
 
-    -- Autopairs --
+    -- Auto Close --
     use("windwp/nvim-autopairs")
+    use("windwp/nvim-ts-autotag")
 
     -- Live Server --
     use("barrett-ruth/live-server.nvim")

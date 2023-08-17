@@ -54,4 +54,10 @@ nvim_tree.setup({
         width = 30,
         side = "left",
     },
+    git = {
+        enable = true,
+        ignore = false,
+        timeout = 500,
+    },
+    filters = { dotfiles = false, custom = { "^.git$" } },
 })

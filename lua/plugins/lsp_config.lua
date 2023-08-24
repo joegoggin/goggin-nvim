@@ -120,3 +120,13 @@ lsp.tailwindcss.setup({
 lsp.prismals.setup({
     capabilities = capabilities,
 })
+
+lsp.rust_analyzer.setup({
+    capabilities = capabilities,
+    cmd = {
+        "rustup",
+        "run",
+        "stable",
+        "rust-analyzer",
+    },
+})

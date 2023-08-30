@@ -78,6 +78,9 @@ return require("packer").startup(function(use)
     use({ "akinsho/toggleterm.nvim", tag = "*" })
     use("christoomey/vim-tmux-navigator")
 
+    -- Markdown --
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

@@ -115,6 +115,18 @@ lsp.emmet_ls.setup({
 
 lsp.tailwindcss.setup({
     capabilities = capabilities,
+    settings = {
+        tailwindCSS = {
+            experimental = {
+                classRegex = {
+                    ":\\s*?[\"'`]([^\"'`]*).*?,",
+                    "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]",
+                    "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]",
+                    "[`'\"`]([^'\"`,;]*)[`'\"`]",
+                },
+            },
+        },
+    },
 })
 
 lsp.prismals.setup({

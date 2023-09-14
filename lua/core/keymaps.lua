@@ -185,6 +185,9 @@ keymap("v", "c", '"_c', {
 keymap("n", "dd", '"_dd', {
     desc = "Delete Line",
 })
+keymap("n", "d$", '"_d$', {
+    desc = "Delete Rest of Line",
+})
 keymap("n", "dw", '"_dw', {
     desc = "Delete Word",
 })

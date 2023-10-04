@@ -61,20 +61,26 @@ end, {
 -- Telescope --
 
 -- -- Normal Mode -- --
-keymap("n", "<leader>fa", builtin.find_files, {
+keymap("n", "<leader>ff", builtin.find_files, {
     desc = "Find All Files",
 })
-keymap("n", "<leader>ff", builtin.git_files, {
-    desc = "File Git Files",
+keymap("n", "<leader>fg", builtin.git_files, {
+    desc = "Find Git Files",
 })
 keymap("n", "<leader>fo", builtin.oldfiles, {
     desc = "Find Old Files",
 })
-keymap("n", "<leader>fg", builtin.live_grep, {
+keymap("n", "<leader>fl", builtin.live_grep, {
     desc = "Search With Live Grep",
 })
 keymap("n", "<leader>fh", builtin.help_tags, {
     desc = "Search Help Tags",
+})
+keymap("n", "<leader>fd", builtin.diagnostics, {
+    desc = "Find Diagnostics",
+})
+keymap("n", "<leader>fk", builtin.keymaps, {
+    desc = "Find Keymaps",
 })
 
 -- Lsp --

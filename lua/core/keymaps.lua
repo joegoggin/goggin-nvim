@@ -61,7 +61,9 @@ end, {
 -- Telescope --
 
 -- -- Normal Mode -- --
-keymap("n", "<leader>ff", builtin.find_files, {
+keymap("n", "<leader>ff", function()
+    builtin.find_files({ no_ignore = true, hidden = true })
+end, {
     desc = "Find All Files",
 })
 keymap("n", "<leader>fg", builtin.git_files, {

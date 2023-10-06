@@ -5,6 +5,6 @@ end
 
 telescope.setup({
     defaults = {
-        file_ignore_patterns = { "node_modules/", ".expo/", ".next/", ".yarn/", ".git/" },
+        file_ignore_patterns = { "node_modules/", "expo/.expo/", "next/.next/", ".yarn/", ".git/" },
     },
 })

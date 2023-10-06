@@ -256,8 +256,8 @@ keymap("n", "<s-l>", "<cmd>bnext<cr>", {
 keymap("n", "<leader>c", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>", {
     desc = "Close Buffer",
 })
-keymap("n", "<leader>C", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr><cmd>q<cr>", {
-    desc = "Close Buffer and Quit",
+keymap("n", "<leader>C", "<cmd>bufdo bd<cr>", {
+    desc = "Close All Buffers",
 })
 
 -- Undotree --

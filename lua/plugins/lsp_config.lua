@@ -33,7 +33,15 @@ local formatting = null_ls.builtins.formatting
 mason.setup()
 
 mason_lsp.setup({
-    ensure_installed = { "lua_ls", "tsserver", "emmet_ls", "tailwindcss", "prismals" },
+    ensure_installed = {
+        "lua_ls",
+        "tsserver",
+        "emmet_ls",
+        "tailwindcss",
+        "prismals",
+        "dockerls",
+        "docker_compose_language_service",
+    },
 })
 
 null_ls.setup({
@@ -141,4 +149,12 @@ lsp.rust_analyzer.setup({
         "stable",
         "rust-analyzer",
     },
+})
+
+lsp.dockerls.setup({
+    capabilities = capabilities,
+})
+
+lsp.docker_compose_language_service.setup({
+    capabilities = capabilities,
 })

@@ -81,6 +81,9 @@ return require("packer").startup(function(use)
     -- Markdown --
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
 
+    -- Suda --
+    use("lambdalisue/suda.vim")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

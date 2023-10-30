@@ -18,6 +18,7 @@ treesitter_config.setup({
         "markdown",
         "prisma",
         "regex",
+        "bash",
     },
     sync_install = false,
     auto_install = true,

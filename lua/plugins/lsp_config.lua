@@ -41,6 +41,7 @@ mason_lsp.setup({
         "prismals",
         "dockerls",
         "docker_compose_language_service",
+        "bashls",
     },
 })
 
@@ -52,11 +53,12 @@ null_ls.setup({
             },
         }),
         formatting.stylua,
+        formatting.shfmt,
     },
 })
 
 mason_null_ls.setup({
-    ensure_installed = { "stylua", "prettierd" },
+    ensure_installed = { "stylua", "prettierd", "shellcheck", "shfmt" },
 })
 
 local capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -157,4 +159,18 @@ lsp.dockerls.setup({
 
 lsp.docker_compose_language_service.setup({
     capabilities = capabilities,
+})
+
+lsp.bashls.setup({
+    capabilities = capabilities,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "sh",
+    callback = function()
+        vim.lsp.start({
+            name = "bash-language-server",
+            cmd = { "bash-language-server", "start" },
+        })
+    end,
 })

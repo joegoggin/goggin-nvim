@@ -1,6 +1,11 @@
 local treesitter_config_status_ok, treesitter_config = pcall(require, "nvim-treesitter.configs")
+local context_commentstring_status_ok, context_commentstring = pcall(require, "ts_context_commentstring")
 
 if not treesitter_config_status_ok then
+    return
+end
+
+if not context_commentstring_status_ok then
     return
 end
 
@@ -25,7 +30,8 @@ treesitter_config.setup({
     highlight = {
         enable = true,
     },
-    context_commentstring = {
-        enable = true,
-    },
+})
+
+context_commentstring.setup({
+    enable_autocmd = false,
 })

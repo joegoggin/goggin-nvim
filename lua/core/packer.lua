@@ -40,8 +40,9 @@ return require("packer").startup(function(use)
     -- Telescope --
     use({
         "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/plenary.nvim", "JoosepAlviste/nvim-ts-context-commentstring" } },
+        requires = { { "nvim-lua/plenary.nvim" } },
     })
+    use("JoosepAlviste/nvim-ts-context-commentstring")
 
     -- Mason --
     use({

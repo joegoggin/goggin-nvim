@@ -36,6 +36,8 @@ vim.opt.scrolloff = 8                           -- sets num of screen line above
 vim.opt.sidescrolloff = 8                       -- sets num of screen columns to left and right of cursor
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.shortmess:append("c")                   -- controls behavior of certain messages that are displayed (reduce visual clutter)
+vim.opt.spell = true                            -- turn on spell check
+vim.opt.spelllang = "en_us"                     -- set language for spell checker to American English
 
 -- cmd --
 vim.cmd("set whichwrap+=<,>,[,],h,l")

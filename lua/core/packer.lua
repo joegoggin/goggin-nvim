@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
     -- Treesitter --
     use("nvim-treesitter/nvim-treesitter")
 
-    -- Completeion --
+    -- Completion --
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
     use("L3MON4D3/LuaSnip")

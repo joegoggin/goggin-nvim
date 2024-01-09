@@ -292,3 +292,8 @@ keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", {
 keymap("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", {
     desc = "Toggle Horizontal Terminal",
 })
+
+-- Vim REST Console
+keymap("n", "<leader>xr", ":call VrcQuery()<cr>", {
+    desc = "Execute REST Query",
+})

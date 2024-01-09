@@ -85,6 +85,9 @@ return require("packer").startup(function(use)
     -- Suda --
     use("lambdalisue/suda.vim")
 
+    -- REST Client --
+    use("diepm/vim-rest-console")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

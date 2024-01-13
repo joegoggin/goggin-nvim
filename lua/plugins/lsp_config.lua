@@ -42,6 +42,7 @@ mason_lsp.setup({
         "dockerls",
         "docker_compose_language_service",
         "bashls",
+        "sqlls",
     },
 })
 
@@ -163,6 +164,14 @@ lsp.docker_compose_language_service.setup({
 
 lsp.bashls.setup({
     capabilities = capabilities,
+})
+
+require("lspconfig").sqlls.setup({
+    capabilities = capabilities,
+    filetypes = { "sql" },
+    root_dir = function(_)
+        return vim.loop.cwd()
+    end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {

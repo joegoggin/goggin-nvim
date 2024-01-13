@@ -293,7 +293,19 @@ keymap("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", {
     desc = "Toggle Horizontal Terminal",
 })
 
--- Vim REST Console
-keymap("n", "<leader>xr", ":call VrcQuery()<cr>", {
+-- Vim REST Console --
+
+-- -- Normal Mode -- --
+keymap("n", "<leader>xr", "<cmd>call VrcQuery()<cr>", {
     desc = "Execute REST Query",
+})
+
+-- SQL --
+
+-- -- Normal Mode -- --
+keymap("n", "<leader>dd", "<cmd>DBUIToggle<cr>", {
+    desc = "Toggle DB UI",
+})
+keymap("n", "<leader>df", "<cmd>DBUIFindBuffer<cr>", {
+    desc = "Add Buffer to DB UI Queries",
 })

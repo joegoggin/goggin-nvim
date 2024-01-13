@@ -88,6 +88,11 @@ return require("packer").startup(function(use)
     -- REST Client --
     use("diepm/vim-rest-console")
 
+    -- SQL --
+    use("tpope/vim-dadbod")
+    use("kristijanhusak/vim-dadbod-ui")
+    use("kristijanhusak/vim-dadbod-completion")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

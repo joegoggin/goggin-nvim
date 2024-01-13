@@ -47,6 +47,7 @@ vim.cmd([[set iskeyword+=-]])
 vim.g.mapleader = " "      -- set leader key
 vim.g.maplocalleader = " " -- set local leader key
 vim.g.skip_ts_context_commentstring_module = true
+vim.g.db_ui_execute_on_save = 0
 
 -- WSL clipboard --
 if vim.fn.has("wsl") == 1 then

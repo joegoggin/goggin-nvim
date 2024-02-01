@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
     use("nvim-lualine/lualine.nvim")
 
     -- Treesitter --
-    use("nvim-treesitter/nvim-treesitter")
+    use({ "nvim-treesitter/nvim-treesitter", tag = "v0.9.2" })
 
     -- Completion --
     use("hrsh7th/nvim-cmp")

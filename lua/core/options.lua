@@ -22,8 +22,6 @@ vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.expandtab = true                        -- convert tabs to spaces
-vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4                             -- the number of spaces for a tab
 vim.opt.cursorline = false                      -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbered lines
@@ -38,6 +36,27 @@ vim.opt.guifont = "monospace:h17"               -- the font used in graphical ne
 vim.opt.shortmess:append("c")                   -- controls behavior of certain messages that are displayed (reduce visual clutter)
 vim.opt.spell = true                            -- turn on spell check
 vim.opt.spelllang = "en_us"                     -- set language for spell checker to American English
+
+-- set custom options for Delavie Media projects --
+
+-- vim.opt.shiftwidth - the number of spaces inserted for each indentation
+-- vim.opt.tabstop - the number of spaces for a tab
+
+local function setDelavieMediaSettings()
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+end
+
+local function setDefaultSettings()
+    vim.opt.shiftwidth = 4
+    vim.opt.tabstop = 4
+end
+
+if IsDelavieMediaProject() then
+    setDelavieMediaSettings()
+else
+    setDefaultSettings()
+end
 
 -- cmd --
 vim.cmd("set whichwrap+=<,>,[,],h,l")

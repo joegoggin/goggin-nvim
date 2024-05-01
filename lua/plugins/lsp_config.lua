@@ -46,20 +46,28 @@ mason_lsp.setup({
     },
 })
 
-null_ls.setup({
+local sources = {
+    formatting.prettierd.with({
+        env = {
+            PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/utils/linter-config/.prettierrc.json"),
+        },
+    }),
+    formatting.stylua,
+    formatting.shfmt,
+}
+
+if IsDelavieMediaProject() then
     sources = {
-        formatting.prettierd.with({
-            env = {
-                PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/utils/linter-config/.prettierrc.json"),
-            },
-        }),
-        formatting.stylua,
-        formatting.shfmt,
-    },
+        formatting.eslint_d,
+    }
+end
+
+null_ls.setup({
+    sources = sources,
 })
 
 mason_null_ls.setup({
-    ensure_installed = { "stylua", "prettierd", "shellcheck", "shfmt" },
+    ensure_installed = { "stylua", "prettierd", "shellcheck", "shfmt", "eslint_d" },
 })
 
 local capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -124,21 +132,23 @@ lsp.emmet_ls.setup({
     filetypes = { "html" },
 })
 
-lsp.tailwindcss.setup({
-    capabilities = capabilities,
-    settings = {
-        tailwindCSS = {
-            experimental = {
-                classRegex = {
-                    ":\\s*?[\"'`]([^\"'`]*).*?,",
-                    "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]",
-                    "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]",
-                    "[`'\"`]([^'\"`,;]*)[`'\"`]",
+if not IsDelavieMediaProject() then
+    lsp.tailwindcss.setup({
+        capabilities = capabilities,
+        settings = {
+            tailwindCSS = {
+                experimental = {
+                    classRegex = {
+                        ":\\s*?[\"'`]([^\"'`]*).*?,",
+                        "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]",
+                        "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]",
+                        "[`'\"`]([^'\"`,;]*)[`'\"`]",
+                    },
                 },
             },
         },
-    },
-})
+    })
+end
 
 lsp.prismals.setup({
     capabilities = capabilities,

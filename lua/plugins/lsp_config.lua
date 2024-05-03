@@ -43,6 +43,7 @@ mason_lsp.setup({
         "docker_compose_language_service",
         "bashls",
         "sqlls",
+        "eslint",
     },
 })
 
@@ -176,12 +177,16 @@ lsp.bashls.setup({
     capabilities = capabilities,
 })
 
-require("lspconfig").sqlls.setup({
+lsp.sqlls.setup({
     capabilities = capabilities,
     filetypes = { "sql" },
     root_dir = function(_)
         return vim.loop.cwd()
     end,
+})
+
+lsp.eslint.setup({
+    capabilities = capabilities,
 })
 
 vim.api.nvim_create_autocmd("FileType", {

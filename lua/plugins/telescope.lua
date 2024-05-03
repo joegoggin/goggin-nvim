@@ -13,6 +13,7 @@ telescope.setup({
             ".git/",
             ".expo/",
             ".DS_Store",
+            "target",
         },
     },
 })

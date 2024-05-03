@@ -44,6 +44,7 @@ mason_lsp.setup({
         "bashls",
         "sqlls",
         "eslint",
+        "cssls",
     },
 })
 
@@ -186,6 +187,10 @@ lsp.sqlls.setup({
 })
 
 lsp.eslint.setup({
+    capabilities = capabilities,
+})
+
+lsp.cssls.setup({
     capabilities = capabilities,
 })
 

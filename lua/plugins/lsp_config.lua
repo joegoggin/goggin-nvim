@@ -37,7 +37,6 @@ mason_lsp.setup({
         "lua_ls",
         "tsserver",
         "emmet_ls",
-        "tailwindcss",
         "prismals",
         "dockerls",
         "docker_compose_language_service",
@@ -133,24 +132,6 @@ lsp.emmet_ls.setup({
     capabilites = capabilities,
     filetypes = { "html" },
 })
-
-if not IsDelavieMediaProject() then
-    lsp.tailwindcss.setup({
-        capabilities = capabilities,
-        settings = {
-            tailwindCSS = {
-                experimental = {
-                    classRegex = {
-                        ":\\s*?[\"'`]([^\"'`]*).*?,",
-                        "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]",
-                        "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]",
-                        "[`'\"`]([^'\"`,;]*)[`'\"`]",
-                    },
-                },
-            },
-        },
-    })
-end
 
 lsp.prismals.setup({
     capabilities = capabilities,

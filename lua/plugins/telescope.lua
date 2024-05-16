@@ -12,6 +12,7 @@ telescope.setup({
             ".yarn/",
             ".git/",
             ".expo/",
+            ".next/",
             ".DS_Store",
             "target",
         },

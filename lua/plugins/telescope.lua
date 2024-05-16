@@ -15,6 +15,8 @@ telescope.setup({
             ".next/",
             ".DS_Store",
             "target",
+            ".docusaurus",
+            ".react-email",
         },
     },
 })

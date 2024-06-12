@@ -135,6 +135,9 @@ keymap("n", "_", "<cmd>resize -5<cr>", {
 keymap("n", "+", "<cmd>resize +5<cr>", {
     desc = "Increase Window Height",
 })
+keymap("n", "<leader>wf", "<cmd>MaximizerToggle<cr>", {
+    desc = "Toggle Fullscreen Of Window",
+})
 
 -- Focus --
 

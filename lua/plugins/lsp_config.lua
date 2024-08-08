@@ -126,6 +126,11 @@ lsp.solargraph.setup({
 
 lsp.tsserver.setup({
     capabilites = capabilities,
+    init_options = {
+        preferences = {
+            importModuleSpecifierPreference = "non-relative",
+        },
+    },
 })
 
 lsp.emmet_ls.setup({

@@ -17,6 +17,7 @@ telescope.setup({
             "target",
             ".docusaurus",
             ".react-email",
+            "**/*.lock",
         },
     },
 })

@@ -96,6 +96,9 @@ return require("packer").startup(function(use)
     -- Maximize Window --
     use("szw/vim-maximizer")
 
+    -- Color Highlighter --
+    use("brenoprata10/nvim-highlight-colors")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

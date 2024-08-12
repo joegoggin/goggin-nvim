@@ -84,6 +84,12 @@ keymap("n", "<leader>fd", builtin.diagnostics, {
 keymap("n", "<leader>fk", builtin.keymaps, {
     desc = "Find Keymaps",
 })
+keymap("n", "<leader>fw", builtin.lsp_references, {
+    desc = "Find LSP References Of Word Under Cursor",
+})
+keymap("n", "<leader>fr", builtin.resume, {
+    desc = "Resume Previous Search",
+})
 
 -- Lsp --
 
@@ -94,15 +100,11 @@ keymap("n", "<leader>lr", vim.lsp.buf.rename, {
 keymap("n", "<leader>la", vim.lsp.buf.code_action, {
     desc = "Run Code Action",
 })
-
 keymap("n", "gd", vim.lsp.buf.definition, {
     desc = "Go to Definition",
 })
 keymap("n", "gi", vim.lsp.buf.implementation, {
     desc = "Go to Implementation",
-})
-keymap("n", "gr", builtin.lsp_references, {
-    desc = "List References",
 })
 keymap("n", "gl", vim.diagnostic.open_float, {
     desc = "Show Diagnostics Info",

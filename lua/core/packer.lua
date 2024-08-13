@@ -99,6 +99,9 @@ return require("packer").startup(function(use)
     -- Color Highlighter --
     use("brenoprata10/nvim-highlight-colors")
 
+    -- Vim Be Good --
+    use("ThePrimeagen/vim-be-good")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
